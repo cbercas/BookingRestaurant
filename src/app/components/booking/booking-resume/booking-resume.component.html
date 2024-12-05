@@ -1,0 +1,13 @@
+<div class="card" *ngFor="let booking of bookings">
+    <div class="card-header">
+        <p class="card-text">Reserva {{booking.status}} para {{booking.persons}} personas el día {{booking.date}}</p>
+    </div>
+    <div class="card-body" >
+      <h5 class="card-title">{{booking.client}} - {{booking.email}}</h5>
+      <p class="card-text">Email: {{booking.email}}</p>
+      <p class="card-text">Nº personas: {{booking.persons}}</p>
+      <p class="card-text">Notas del cliente: {{booking.notes}}</p>
+      <button class="btn btn-primary">Modificar reserva</button>
+      <button class="btn btn-primary" (click)="eliminarReserva(booking.id)">Borrar reserva</button>
+    </div>
+  </div>
