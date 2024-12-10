@@ -47,13 +47,13 @@ export class BookingService {
       }
     }
 
-    addBookingPerson(id:number, client:string, phone: string, email:string, persons:number,
-      notes:string, date:Date, dateCreation:Date, status:BookingStatus): Booking {
+    addBookingPerson(client:string, phone: string, email:string, persons:number,
+      notes:string, date:Date): Booking {
 
       const newId = this.bookings.length ? Math.max(...this.bookings.map(booking => booking.id)) + 1 : 1;
 
       // Crear una nueva reserva
-      const newBooking = new Booking(id,client,phone,email,persons,notes,date,dateCreation,status);
+      const newBooking = new Booking(newId,client,phone,email,persons,notes,date,new Date(),BookingStatus.PENDING);
 
       // Agregar la nueva reserva al array
       this.bookings.push(newBooking);
@@ -85,4 +85,5 @@ export class BookingService {
       }
     }
   }
+
 }

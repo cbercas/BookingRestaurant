@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Booking, BookingStatus } from '../../../models/booking.model';
 import { CommonModule } from '@angular/common';
 import { BookingService } from '../../../services/booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-resume',
@@ -15,7 +16,7 @@ export class BookingResumeComponent implements OnInit{
 
   bookings: Booking[] = [];
 
-  constructor(private bookingService : BookingService){}
+  constructor(private bookingService : BookingService, private routerService:Router){}
 
   ngOnInit(): void {
     this.bookings = this.bookingService.getAllBooking()
@@ -24,5 +25,9 @@ export class BookingResumeComponent implements OnInit{
   eliminarReserva(id: number) {
     this.bookingService.delete(id)
    }
+
+  editarReserva(id:number){
+    this.routerService.navigate([`/edit/${id}`]);
+  }
 
 }
