@@ -9,13 +9,13 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page"  routerLink="/Home">Home</a>
           </li>
-          <li *ngIf="isAuthenticated" class="nav-item">
+          <li *ngIf="isAuthenticated"  class="nav-item">
             <a class="nav-link"  routerLink="/bookings" >Bookings</a>
           </li>
-          <li *ngIf="isAuthenticated" class="nav-item">
+          <li *ngIf="isAuthenticated"  class="nav-item">
             <a class="nav-link"  routerLink="/edit/0" >Book now!</a>
           </li>
-          <li *ngIf="isAuthenticated" class="nav-item dropdown">
+          <li *ngIf="isAuthenticated"  class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dashboard
             </a>
@@ -30,7 +30,7 @@
           <li *ngIf="!isAuthenticated" class="nav-item">
             <a class="nav-link" routerLink="/register">Signin</a>
           </li>
-          <li *ngIf="isAuthenticated" class="nav-item">
+          <li  *ngIf="isAuthenticated" class="nav-item">
             <a class="nav-link" aria-current="page" href="#" (click)="onClick()">Logout!</a>
           </li>
         </ul>
